@@ -18,3 +18,4 @@
 
 # Ignore private files.
 /config/initializers/secret_token.rb
+/config/config.yml
