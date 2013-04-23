@@ -1,0 +1,7 @@
+%h1 メンバー登録
+= simple_form_for @user, html: { class: 'form-horizontal' } do |f|
+  %fieldset
+    = f.input :name, hint: "例: 山田太郎"
+    = f.input :yomi, hint: "例: やまだ たろう"
+    .form-actions
+      = f.button :submit, class: 'btn-primary'
