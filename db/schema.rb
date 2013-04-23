@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20130423131415) do
 
   create_table "activities", force: true do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "type",       null: false
+    t.integer  "user_id",       null: false
+    t.integer  "activity_type", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
