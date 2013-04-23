@@ -1,5 +1,6 @@
 Timecard::Application.routes.draw do
-  get "users/new"
+
+  resources :users, only: %i(new create)
 
   root 'index#index'
 

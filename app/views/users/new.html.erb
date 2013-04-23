@@ -1,2 +1,12 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>メンバー登録</h1>
+
+<%= simple_form_for @user, html: { class: 'form-horizontal' } do |f| %>
+  <fieldset>
+    <%= f.input :name, hint: "例: 山田太郎" %>
+    <%= f.input :yomi, hint: "例: やまだ たろう" %>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: 'btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>
