@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use twitter-bootstrap for easy designning
 gem 'twitter-bootstrap-rails'
 
+# Use simple_form for smart form builder
+gem 'simple_form', '3.0.0.beta1'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
