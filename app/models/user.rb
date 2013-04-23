@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :activities
+
   def status_to_str
     case self.status
     when 0
