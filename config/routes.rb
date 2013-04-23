@@ -1,6 +1,12 @@
 Timecard::Application.routes.draw do
 
-  resources :users, only: %i(new create)
+  resources :users, only: %i(new create) do
+    member do
+      get :home
+      get :lab
+      get :out
+    end
+  end
 
   root 'index#index'
 

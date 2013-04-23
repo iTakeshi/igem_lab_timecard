@@ -11,4 +11,22 @@ class User < ActiveRecord::Base
       '離席'
     end
   end
+
+  def lab
+    self.activities.create!(activity_type: 1)
+    self.status = 1
+    self.save!
+  end
+
+  def home
+    self.activities.create!(activity_type: 0)
+    self.status = 0
+    self.save!
+  end
+
+  def out
+    self.activities.create!(activity_type: 2)
+    self.status = 2
+    self.save!
+  end
 end
