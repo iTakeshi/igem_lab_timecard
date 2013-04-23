@@ -1,2 +1,10 @@
-%h1 Index#index
-%p Find me in app/views/index/index.html.erb
+%table.table
+  %tr
+    %th name
+    %th status
+    %th{colspan: 4} actions
+
+  - @users.each do |u|
+    %tr
+      %td= u.name
+      %td= status_with_color(u)
