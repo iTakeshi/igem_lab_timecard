@@ -7,8 +7,8 @@ ssh_options[:port] = '10022'
 default_run_options[:pty] = true
 
 set :scm,         :git
-set :repository,  'git@github.com:iTakeshi/ping-pong-match.git'
-set :application, 'ping-pong'
+set :repository,  'git@github.com:iTakeshi/igem_lab_timecard.git'
+set :application, 'timecard'
 
 set :deploy_via,  :remote_cache
 set :scm_verbose, true
@@ -16,7 +16,7 @@ set :use_sudo,    false
 set :rails_env,   :production
 
 set :user,   'itakeshi'
-set :domain, 'ping-pong.itakeshi.net'
+set :domain, 'lab.itakeshi.net'
 set :port,   '10022'
 set :branch, 'master'
 
