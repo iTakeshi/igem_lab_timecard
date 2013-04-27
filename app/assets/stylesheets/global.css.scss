@@ -8,3 +8,7 @@ footer {
   border-top: 1px solid #dddddd;
   text-align: center;
 }
+
+.btn.disabled {
+  opacity: 0.25;
+}
