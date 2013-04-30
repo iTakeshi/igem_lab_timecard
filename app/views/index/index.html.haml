@@ -9,6 +9,7 @@
       %td= u.name
       %td= status_with_color(u)
       %td
-        = link_to('実験中', u.status != 1 ? lab_user_path(u)  : 'javascript:void(0)', class: "btn btn-success #{ u.status != 1 ? '' : 'disabled'}")
-        = link_to('離席',   u.status == 1 ? out_user_path(u)  : 'javascript:void(0)', class: "btn btn-warning #{ u.status == 1 ? '' : 'disabled'}")
-        = link_to('帰宅',   u.status != 0 ? home_user_path(u) : 'javascript:void(0)', class: "btn btn-danger  #{ u.status != 0 ? '' : 'disabled'}")
+        = link_to('実験中',   u.status != 1 ? lab_user_path(u)  :    'javascript:void(0)', class: "btn btn-success #{ u.status != 1 ? '' : 'disabled'}")
+        = link_to('離席',     u.status == 1 ? out_user_path(u)  :    'javascript:void(0)', class: "btn btn-warning #{ u.status == 1 ? '' : 'disabled'}")
+        = link_to('帰宅',     u.status != 0 ? home_user_path(u) :    'javascript:void(0)', class: "btn btn-danger  #{ u.status != 0 ? '' : 'disabled'}")
+        = link_to('出勤不能', u.status != 3 ? disable_user_path(u) : 'javascript:void(0)', class: "btn             #{ u.status != 3 ? '' : 'disabled'}")

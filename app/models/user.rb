@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
       '実験中'
     when 2
       '離席'
+    when 3
+      '出勤不能'
     end
   end
 
@@ -27,6 +29,12 @@ class User < ActiveRecord::Base
   def out
     self.activities.create!(activity_type: 2)
     self.status = 2
+    self.save!
+  end
+
+  def disable
+    self.activities.create!(activity_type: 3)
+    self.status = 3
     self.save!
   end
 end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i(lab home out)
+  before_action :set_user, only: %i(lab home out disable)
 
   def new
     @user = User.new
@@ -27,6 +27,11 @@ class UsersController < ApplicationController
   def out
     @user.out
     redirect_to root_path, notice: '休息も仕事のうち'
+  end
+
+  def disable
+    @user.disable
+    redirect_to root_path, notice: 'この分はいつ働いてもらおうかしらね…'
   end
 
   private

@@ -5,6 +5,7 @@ Timecard::Application.routes.draw do
       get :home
       get :lab
       get :out
+      get :disable
     end
   end
 
