@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :activities
 
+  scope :working, -> { where(status: 1) }
+
   def status_to_str
     case self.status
     when 0
