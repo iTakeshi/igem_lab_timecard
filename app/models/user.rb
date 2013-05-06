@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :activities
 
+  default_scope { order('yomi ASC') }
   scope :working, -> { where(status: 1) }
 
   def status_to_str
