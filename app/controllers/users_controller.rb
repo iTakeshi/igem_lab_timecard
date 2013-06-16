@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i(lab home out disable update)
+  before_action :set_user, only: %i(lab home out disable update remove_attendance_plan)
 
   def new
     @user = User.new
@@ -38,6 +38,12 @@ class UsersController < ApplicationController
     @user.attributes = user_params
     @user.save!
     redirect_to root_path, notice: '出勤予定を設定しました。'
+  end
+
+  def remove_attendance_plan
+    @user.attendance_plan = nil
+    @user.save
+    redirect_to root_path, notice: '出勤予定を削除しました。'
   end
 
   private

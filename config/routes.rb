@@ -6,6 +6,7 @@ Timecard::Application.routes.draw do
       get :lab
       get :out
       get :disable
+      get :remove_attendance_plan
     end
   end
 

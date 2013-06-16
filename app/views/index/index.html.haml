@@ -24,6 +24,7 @@
           = link_to('出勤不能', u.status != 3 ? disable_user_path(u) : 'javascript:void(0)', class: "btn             #{ u.status != 3 ? '' : 'disabled'}")
         %td
           = u.attendance_plan.strftime("%Y-%m-%d %H:%M") if u.attendance_plan
+          = link_to('出勤予定削除', remove_attendance_plan_user_path(u), class: "btn") if u.attendance_plan
           %button.js-add-attendance-plan.btn.pull-right 設定
           = simple_form_for u do |f|
             = f.input :attendance_plan, label: false, as: :datetime, datetime_separator: ''
