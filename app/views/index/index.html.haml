@@ -11,6 +11,7 @@
       %th 氏名
       %th 現在の状態
       %th 状態を変更
+      %th 次回出勤予定
 
     - @users.each do |u|
       %tr
@@ -21,3 +22,9 @@
           = link_to('離席',     u.status == 1 ? out_user_path(u)  :    'javascript:void(0)', class: "btn btn-warning #{ u.status == 1 ? '' : 'disabled'}")
           = link_to('帰宅',     u.status != 0 ? home_user_path(u) :    'javascript:void(0)', class: "btn btn-danger  #{ u.status != 0 ? '' : 'disabled'}")
           = link_to('出勤不能', u.status != 3 ? disable_user_path(u) : 'javascript:void(0)', class: "btn             #{ u.status != 3 ? '' : 'disabled'}")
+        %td
+          = u.attendance_plan.strftime("%Y-%m-%d %H:%M")
+          %button.js-add-attendance-plan.btn.pull-right 設定
+          = simple_form_for u do |f|
+            = f.input :attendance_plan, label: false, as: :datetime, datetime_separator: ''
+            = f.button :submit, 'Save'

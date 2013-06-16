@@ -1,6 +1,6 @@
 Timecard::Application.routes.draw do
 
-  resources :users, only: %i(new create) do
+  resources :users, only: %i(new create update) do
     member do
       get :home
       get :lab
