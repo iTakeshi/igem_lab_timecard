@@ -8,6 +8,10 @@ Timecard::Application.routes.draw do
       get :disable
       get :remove_attendance_plan
     end
+
+    collection do
+      get :dismiss
+    end
   end
 
   root 'index#index'

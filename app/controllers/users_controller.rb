@@ -46,6 +46,13 @@ class UsersController < ApplicationController
     redirect_to root_path, notice: '出勤予定を削除しました。'
   end
 
+  def dismiss
+    User.working.each do |u|
+      u.home
+    end
+    redirect_to root_path, notice: 'お疲れ様でした'
+  end
+
   private
   def set_user
     @user = User.find(params[:id])

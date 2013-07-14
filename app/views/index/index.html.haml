@@ -1,5 +1,6 @@
 #working
   %h3 実験中のメンバー
+  = link_to('解散', dismiss_users_path, class: "btn")
   %ul
     - @working.each do |u|
       %li= u.name
